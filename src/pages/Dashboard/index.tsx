@@ -1,5 +1,6 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { FiChevronRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import api from "../../api";
 import Header from "../../components/Header";
 import "../../components/RepositoryItem/styles";
@@ -75,7 +76,7 @@ const Dashboard: React.FC = () => {
       {inputError && <Error>{inputError}</Error>}
       <Repositories>
         {repositories.map((repo) => (
-          <Repo href="https://app.rocketseat.com.br/node/nivel-03/group/criando-a-aplicacao/lesson/estilizando-dashboard">
+          <Repo key={repo.full_name} to={`/repository/${repo.full_name}`}>
             <img src={repo.owner.avatar_url} alt="" />
             <div>
               <strong>{repo.full_name}</strong>

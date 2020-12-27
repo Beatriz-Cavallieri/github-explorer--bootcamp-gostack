@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Repo = styled.a`
+export const Repo = styled(Link)`
   background-color: #fff;
   border-radius: 5px;
   width: 100%;
